@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[My Blog]]></title>
   <link href="http://androidpdn.github.com/atom.xml" rel="self"/>
   <link href="http://androidpdn.github.com/"/>
-  <updated>2012-01-14T20:55:13-06:00</updated>
+  <updated>2012-01-14T21:34:58-06:00</updated>
   <id>http://androidpdn.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[AndroidPDN]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>

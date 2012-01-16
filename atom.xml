@@ -4,7 +4,7 @@
   <title><![CDATA[My Blog]]></title>
   <link href="http://androidpdn.github.com/atom.xml" rel="self"/>
   <link href="http://androidpdn.github.com/"/>
-  <updated>2012-01-14T21:34:58-06:00</updated>
+  <updated>2012-01-15T21:53:40-06:00</updated>
   <id>http://androidpdn.github.com/</id>
   <author>
     <name><![CDATA[AndroidPDN]]></name>
@@ -12,5 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[First post - setup blog on github]]></title>
+    <link href="http://androidpdn.github.com/blog/2012/01/14/first-post-setup-blog-on-github/"/>
+    <updated>2012-01-14T21:50:00-06:00</updated>
+    <id>http://androidpdn.github.com/blog/2012/01/14/first-post-setup-blog-on-github</id>
+    <content type="html"><![CDATA[<h4>Create an Github account</h4>
+
+<p>Go to <a href="http://github.com">github.com</a> to create an account.</p>
+
+<h4>Setup Git on PC</h4>
+
+<p>Follow the <a href="http://help.github.com/linux-set-up-git/">github.com&#8217;s instruction</a> to setup Git.</p>
+
+<h4>Setup and deploy blog on Github</h4>
+
+<p>Follow <a href="http://greglus.com/blog/2011/10/10/how-to-install-octopress-on-ubuntu/">this post</a> to setup the blog site. <br/>
+<em>Note</em>: <br/>
+  1. As of Jan 14 2012, installing <code>iconv</code> will fail if you strictly follow the above post. Change <code>rvm pkg install iconv</code> to <code>rvm --skip-autoreconf pkg install iconv</code> in the Initial Setup script will fix the <code>iconv</code> installation problem. <br/>
+  2. After the initial setup, before running the deoplyment script, you shall execute <code>source ~/.profile</code> <br/>
+  3. The deployment script shall be executed under the <code>~/octopress</code> directory, which was created by the initial setup script. When prompted with &#8220;Enter the read/write url for your repository:&#8221;, you shall provide the url for your repository in the format of <code>git@github.com:yourname/yourname.github.com.git</code>; otherwise you may see the<code>error of "rake aborted!   undefined method '[]' for nil:NilClass</code></p>
+
+<h4>Create a new post</h4>
+
+<p><code>rake new_post["title"]</code> <br/>
+A new post file will be created locally under<code>~/octopress/source/_posts</code> folder. Edit the file to put in the contents of your new post in markdown format.</p>
+
+<h4>Generate and Preveiw</h4>
+
+<p><code>rake generate</code> will generate the post into the public folder <br/>
+<code>rake watch</code> will watch the <code>source/</code> and <code>sass/</code> folders for changes and regenerate <br/>
+<code>rake preview</code> will generate the preview at <a href="http://localhost:4000">http://localhost:4000</a></p>
+
+<h4>Deploy the post</h4>
+
+<p><code>rake deploy</code> will push the new post (or changes) to github.</p>
+]]></content>
+  </entry>
   
 </feed>

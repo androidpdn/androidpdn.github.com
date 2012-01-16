@@ -4,7 +4,7 @@
   <title><![CDATA[My Blog]]></title>
   <link href="http://androidpdn.github.com/atom.xml" rel="self"/>
   <link href="http://androidpdn.github.com/"/>
-  <updated>2012-01-15T21:53:40-06:00</updated>
+  <updated>2012-01-15T21:56:01-06:00</updated>
   <id>http://androidpdn.github.com/</id>
   <author>
     <name><![CDATA[AndroidPDN]]></name>
@@ -18,7 +18,7 @@
     <link href="http://androidpdn.github.com/blog/2012/01/14/first-post-setup-blog-on-github/"/>
     <updated>2012-01-14T21:50:00-06:00</updated>
     <id>http://androidpdn.github.com/blog/2012/01/14/first-post-setup-blog-on-github</id>
-    <content type="html"><![CDATA[<h4>Create an Github account</h4>
+    <content type="html"><![CDATA[<h4>Create a Github account</h4>
 
 <p>Go to <a href="http://github.com">github.com</a> to create an account.</p>
 

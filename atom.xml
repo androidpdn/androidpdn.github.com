@@ -4,7 +4,7 @@
   <title><![CDATA[My Blog]]></title>
   <link href="http://androidpdn.github.com/atom.xml" rel="self"/>
   <link href="http://androidpdn.github.com/"/>
-  <updated>2012-01-15T21:56:01-06:00</updated>
+  <updated>2012-01-16T21:36:24-06:00</updated>
   <id>http://androidpdn.github.com/</id>
   <author>
     <name><![CDATA[AndroidPDN]]></name>
@@ -26,13 +26,71 @@
 
 <p>Follow the <a href="http://help.github.com/linux-set-up-git/">github.com&#8217;s instruction</a> to setup Git.</p>
 
-<h4>Setup and deploy blog on Github</h4>
+<h4>Install Octopress and deploy blog on Github</h4>
 
 <p>Follow <a href="http://greglus.com/blog/2011/10/10/how-to-install-octopress-on-ubuntu/">this post</a> to setup the blog site. <br/>
 <em>Note</em>: <br/>
   1. As of Jan 14 2012, installing <code>iconv</code> will fail if you strictly follow the above post. Change <code>rvm pkg install iconv</code> to <code>rvm --skip-autoreconf pkg install iconv</code> in the Initial Setup script will fix the <code>iconv</code> installation problem. <br/>
   2. After the initial setup, before running the deoplyment script, you shall execute <code>source ~/.profile</code> <br/>
   3. The deployment script shall be executed under the <code>~/octopress</code> directory, which was created by the initial setup script. When prompted with &#8220;Enter the read/write url for your repository:&#8221;, you shall provide the url for your repository in the format of <code>git@github.com:yourname/yourname.github.com.git</code>; otherwise you may see the<code>error of "rake aborted!   undefined method '[]' for nil:NilClass</code></p>
+
+<p>Here is my copy of octopress initial setup script:</p>
+
+<figure class='code'><figcaption><span> (octopress_install.bash)</span> <a href='http://androidpdn.github.com/downloads/code/octopress_install.bash'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get install bash curl git-core -y
+</span><span class='line'>sudo apt-get install build-essential bison openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake -y
+</span><span class='line'>bash &lt; &lt;<span class="o">(</span>curl -s https://rvm.beginrescueend.com/install/rvm<span class="o">)</span>
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;[[ -s &quot;$HOME/.rvm/scripts/rvm&quot; ]] &amp;&amp; . &quot;$HOME/.rvm/scripts/rvm&quot; # Load RVM function&#39;</span> &gt;&gt; ~/.bash_profile
+</span><span class='line'><span class="nb">source</span> .bash_profile
+</span><span class='line'>rvm pkg install openssl
+</span><span class='line'>rvm --skip-autoreconf pkg install iconv
+</span><span class='line'>rvm install 1.9.2 -C --with-openssl-dir<span class="o">=</span><span class="nv">$HOME</span>/.rvm/usr,--with-iconv-dir<span class="o">=</span><span class="nv">$HOME</span>/.rvm/usr
+</span><span class='line'>rvm use 1.9.2 --default
+</span><span class='line'>rvm reload
+</span><span class='line'>rvm rubygems latest
+</span><span class='line'>gem install bundler
+</span><span class='line'><span class="nb">cd</span>
+</span><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'><span class="nb">cd </span>octopress
+</span><span class='line'>bundle install
+</span><span class='line'>rake install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And here is my copy of octopress deployment script:</p>
+
+<figure class='code'><figcaption><span> (octopress_deploy.bash)</span> <a href='http://androidpdn.github.com/downloads/code/octopress_deploy.bash'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake setup_github_pages
+</span><span class='line'>rake generate
+</span><span class='line'>rake deploy
+</span><span class='line'>git add .
+</span><span class='line'>git commit -m <span class="s1">&#39;initial source commit&#39;</span>
+</span><span class='line'>git push origin <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h4>Create a new post</h4>
 

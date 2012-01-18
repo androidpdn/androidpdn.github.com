@@ -4,7 +4,7 @@
   <title><![CDATA[My Blog]]></title>
   <link href="http://androidpdn.github.com/atom.xml" rel="self"/>
   <link href="http://androidpdn.github.com/"/>
-  <updated>2012-01-16T21:36:24-06:00</updated>
+  <updated>2012-01-17T20:58:32-06:00</updated>
   <id>http://androidpdn.github.com/</id>
   <author>
     <name><![CDATA[AndroidPDN]]></name>
@@ -36,7 +36,7 @@
 
 <p>Here is my copy of octopress initial setup script:</p>
 
-<figure class='code'><figcaption><span> (octopress_install.bash)</span> <a href='http://androidpdn.github.com/downloads/code/octopress_install.bash'>download</a></figcaption>
+<figure class='code'><figcaption><span>[octopress install] [] (octopress_install)</span> <a href='http://androidpdn.github.com/downloads/code/octopress_install'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -76,7 +76,7 @@
 
 <p>And here is my copy of octopress deployment script:</p>
 
-<figure class='code'><figcaption><span> (octopress_deploy.bash)</span> <a href='http://androidpdn.github.com/downloads/code/octopress_deploy.bash'>download</a></figcaption>
+<figure class='code'><figcaption><span>[octopress deploy] [] (octopress_deploy)</span> <a href='http://androidpdn.github.com/downloads/code/octopress_deploy'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
